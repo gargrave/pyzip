@@ -38,7 +38,8 @@ class AddCommand(BasicCommand):
         # otherwise, confirm the name of the project, and
         # either continue to the next step or loop back
         else:
-            print('Use the name "{}" for this project? [Yn]'.format(project_name))
+            print('Use the name "{}" for this project? [Yn]'.format(
+                project_name))
             choice = input('> ').lower().strip()
             if choice == 'n':
                 self.get_project_name()
@@ -145,10 +146,12 @@ class AddCommand(BasicCommand):
             raise ValueError('Project path cannot be empty!')
         # confirm that the path exists
         elif not os.path.exists(path):
-            raise ValueError('The specified path does not exist on this system.')
+            raise ValueError(
+                'The specified path does not exist on this system.')
         # confirm that path is not already in use
         elif ensure_unique and config.contains_project_at_path(path):
-            raise ValueError('That path is already in use. Please try another.')
+            raise ValueError(
+                'That path is already in use. Please try another.')
 
     def confirm_path(self, path):
         """

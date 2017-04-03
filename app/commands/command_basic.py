@@ -65,7 +65,8 @@ class BasicCommand:
         Displays a list of the projects on this local machine, and the
         index required to call that project.
         """
-        gl.console.log_msg(['Current Projects', ''] + config.get_indexed_project_list())
+        gl.console.log_msg(['Current Projects', ''] +
+                           config.get_indexed_project_list())
         if callback:
             callback()
 

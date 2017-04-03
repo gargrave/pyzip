@@ -18,9 +18,11 @@ class Pyzip:
         # load config, and if everything goes okay, proceed
         if not config.load_config():
             self.commands = [
-                InputCommand('a', self.do_add, 'Add a new project to the list'),
+                InputCommand('a', self.do_add,
+                             'Add a new project to the list'),
                 InputCommand('l', self.do_list, 'List all available commands'),
-                InputCommand('r', self.do_remove, 'Remove an existing project'),
+                InputCommand('r', self.do_remove,
+                             'Remove an existing project'),
                 InputCommand('q', self.do_quit, 'Quit the application'),
                 InputCommand('z', self.do_zip, 'Create an archive')
             ]
@@ -87,7 +89,8 @@ class Pyzip:
         """
         Lists all available commands and a description of each.
         """
-        command_list = ['{} : {}'.format(cmd.key, cmd.desc) for cmd in self.commands]
+        command_list = ['{} : {}'.format(cmd.key, cmd.desc)
+                        for cmd in self.commands]
         gl.console.log_msg(['Commands', ''] + command_list)
         self.input_loop()
 

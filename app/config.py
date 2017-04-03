@@ -5,7 +5,8 @@ from app.globals import gl as gl
 
 
 # the name of the file for reading/writing config
-CONFIG_FILE = os.path.join(os.path.expanduser('~'), 'Documents/PyzipConfig.json')
+CONFIG_FILE = os.path.join(os.path.expanduser('~'),
+                           'Documents/PyzipConfig.json')
 
 
 class Config:
@@ -42,7 +43,6 @@ class Config:
             'A new one will be created now...'
         ])
         # create an empty config object
-        # TODO pull this block into a separate file
         self.config = {
             'projects': [
                 {
@@ -114,10 +114,12 @@ class Config:
 
             # loop through each project in this category
             for project in project_list:
-                # make sure the path to the project is valid, and add it to the list
+                # make sure the path to the project is valid, and add it to the
+                # list
                 if os.path.exists(project['path']):
                     self.indexed_projects.append(project)
-                    print_list.append('  [{}] - {}'.format(index, project['name']))
+                    print_list.append(
+                        '  [{}] - {}'.format(index, project['name']))
                     index += 1
             print_list.append('')
 

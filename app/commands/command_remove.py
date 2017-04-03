@@ -11,7 +11,8 @@ class RemoveCommand(BasicCommand):
     def start(self, final_callback):
         """
         Starts the process of removing a project.
-        :param callback: (function) The callback method to invoke when the process is done.
+        :param callback: (function) The callback method to invoke
+            when the process is done.
         """
         super().start(final_callback)
         self.list_projects(self.input_loop)
@@ -34,7 +35,8 @@ class RemoveCommand(BasicCommand):
             gl.console.log_msg([
                 'Remove the following project? [yN]',
                 project_to_remove['name']])
-            # if user confirms, remove it; anything else will return to input loop
+            # if user confirms, remove it; anything else will return to input
+            # loop
             if self.get_user_input() == 'y':
                 self.remove_project_from_list(int(choice))
             else:

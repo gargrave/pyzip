@@ -16,9 +16,11 @@ class CommandBuilder:
         # build the base file name, the full output path,
         # and return the full command required to call 7zip; quotes are
         # added around the two file paths to account for potential spaces
-        base_name = '{}-{}'.format(os.path.basename(input_path), tools.get_date_string())
+        base_name = '{}-{}'.format(os.path.basename(input_path),
+                                   tools.get_date_string())
         self.full_name = os.path.join(os.path.dirname(input_path), base_name)
-        return '{} {} "{}" "{}"'.format(self.app_path, self.args, self.full_name, input_path)
+        return '{} {} "{}" "{}"'.format(
+            self.app_path, self.args, self.full_name, input_path)
 
     @property
     def args(self):

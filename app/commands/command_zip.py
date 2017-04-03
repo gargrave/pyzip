@@ -56,7 +56,8 @@ class ZipCommand(BasicCommand):
             subprocess.call(cmd, shell=True)
 
         # print the success message and return to the input loop
-        gl.console.log_msg(['Success!', 'The archive was successfully created.'])
+        gl.console.log_msg(
+            ['Success!', 'The archive was successfully created.'])
         # check if there is a 'copyTo' property specified
         try:
             # the src/dest to copy the new archive to/from
